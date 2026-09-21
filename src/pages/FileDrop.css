@@ -1,0 +1,41 @@
+.sf-button {
+    outline: 2px solid white;
+    outline-offset: -1px;
+    transition: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+.sf-button:hover {
+    outline-offset: 5px;
+}
+.sf-button:active {
+    color: white;
+}
+
+.drop-area {
+    outline: 2px solid  #101828;
+    outline-offset: -5px;
+    transition: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+.drop-area-active {
+     outline-offset: 10px;
+}
+.transition {
+    background-color:  #101828;
+    visibility: hidden;
+    border-radius: 999px;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: scale(0.5,0.5);
+    transition: transform 1s ease-out;
+}
+
+.transition-active {
+    visibility: visible;
+    transform: scale(500, 500);
+}
