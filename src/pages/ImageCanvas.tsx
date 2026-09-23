@@ -27,7 +27,7 @@ export default function ImageCanvas({ imageURL }: { imageURL: string }) {
   return (
     <canvas
       ref={canvasRef}
-      className="w-full h-full object-contain z-20"
+      className="w-full h-full object-contain z-10"
     ></canvas>
   );
 }

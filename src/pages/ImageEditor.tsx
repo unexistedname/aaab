@@ -20,12 +20,12 @@ export default function ImageEditor() {
     <ImageReadyProvider>
       <div className=" bg-amber-200 w-screen h-screen grid grid-cols-5 grid-rows-1">
         <div className="bg-gray-950 col-span-4 relative flex justify-center align-middle overflow-hidden">
-          <div className="absolute text-white text-2xl top-1/2 z-10 font-bold">
+          <div className="absolute text-white text-2xl top-1/2 z-0 font-bold">
             Loading...
           </div>
           <ImageCanvas imageURL={imageURL} />
         </div>
-        <div className="bg-white outline-2 outline-white -outline-offset-2 py-5 px-2 hover:outline-offset-8 transition-all duration-200 ease-out z-10 overflow-x-hidden overflow-y-auto flex flex-col gap-4">
+        <div className="bg-white outline-2 outline-white -outline-offset-2 py-5 px-2 hover:outline-offset-8 transition-all duration-200 ease-out z-50 overflow-x-hidden overflow-y-auto flex flex-col gap-4">
           <SectionHeader
             text="Information"
             onClick={() => {
