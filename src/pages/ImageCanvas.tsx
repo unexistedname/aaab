@@ -24,5 +24,10 @@ export default function ImageCanvas({ imageURL }: { imageURL: string }) {
     };
   }, [imageURL, imageRef, setImageReady]);
 
-  return <canvas ref={canvasRef} className="w-full h-full object-contain"></canvas>;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="w-full h-full object-contain z-20"
+    ></canvas>
+  );
 }

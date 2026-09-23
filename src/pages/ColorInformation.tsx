@@ -3,20 +3,22 @@ import { useEffect, useState } from "react";
 import useImage from "../hooks/useImage";
 import useImageReady from "../hooks/useImageReady";
 import ColorChart from "./components/ColorChart";
+import ChartLoading from "./components/ChartLoading";
 
 export default function ColorInformation() {
   const imageRef = useImage();
-  const [isImageReady,] = useImageReady();
+  const [isImageReady] = useImageReady();
+  const [statReady, setStatReady] = useState<boolean>(false);
   const [redData, setRedData] = useState<number[]>([]);
   const [greenData, setGreenData] = useState<number[]>([]);
   const [blueData, setBlueData] = useState<number[]>([]);
 
   useEffect(() => {
     if (!isImageReady || !imageRef.current) return;
-    
-    const imageContext = imageRef.current.getContext('2d');
+
+    const imageContext = imageRef.current.getContext("2d");
     if (!imageContext) return;
-    
+
     const imgData = imageContext.getImageData(
       0,
       0,
@@ -26,27 +28,29 @@ export default function ColorInformation() {
     const redTemp: number[] = new Array(256).fill(0);
     const greenTemp: number[] = new Array(256).fill(0);
     const blueTemp: number[] = new Array(256).fill(0);
-    
+
     for (let i = 0; i < imgData.data.length; i += 4) {
       redTemp[imgData.data[i]] += 1;
-      greenTemp[imgData.data[i+1]] += 1;
-      blueTemp[imgData.data[i+2]] += 1;
+      greenTemp[imgData.data[i + 1]] += 1;
+      blueTemp[imgData.data[i + 2]] += 1;
     }
 
     setRedData(redTemp);
     setGreenData(greenTemp);
     setBlueData(blueTemp);
-    
+    setStatReady(true);
   }, [imageRef, isImageReady]);
-  
-  return (
-    <div className="w-full flex flex-col">
+
+  return statReady ? (
+    <div className="w-full flex flex-col h-fit">
       <div className="font-medium">Red</div>
-      <ColorChart data={redData} color="red"/>
+      <ColorChart data={redData} color="red" />
       <div className="font-medium">Green</div>
-      <ColorChart data={greenData} color="green"/>
+      <ColorChart data={greenData} color="green" />
       <div className="font-medium">Blue</div>
-      <ColorChart data={blueData} color="blue"/>
+      <ColorChart data={blueData} color="blue" />
     </div>
+  ) : (
+    <ChartLoading />
   );
 }
