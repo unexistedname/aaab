@@ -4,7 +4,7 @@ import ImageReadyProvider from "../provider/ImageReadyProvider";
 import ColorInformation from "./ColorInformation";
 import { useEffect, useState, type ReactNode } from "react";
 import NormalInformation from "./NormalInformation";
-import "./ImageEditor.css";
+import "./style/ImageEditor.css";
 
 type sectionState = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 

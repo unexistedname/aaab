@@ -1,6 +1,6 @@
 import { useRef, useState} from "react";
 import type { DragEvent, ChangeEvent } from "react";
-import "./FileDrop.css";
+import "./style/FileDrop.css";
 import { useNavigate } from "react-router-dom";
 
 export default function FileDrop() {
