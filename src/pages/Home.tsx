@@ -2,7 +2,7 @@ import FileDrop from "./FileDrop";
 
 export default function Home() {
   return (
-    <div className="flex w-screen h-screen items-center justify-center overflow-hidden">
+    <div className="flex w-screen h-screen items-center justify-center overflow-hidden bg-black">
       <FileDrop />
     </div>
   )

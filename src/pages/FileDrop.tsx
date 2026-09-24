@@ -46,10 +46,10 @@ export default function FileDrop() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative bg-gray">
       <div className={`absolute transition ${transition ? "transition-active" : ""}`}></div>
       <div
-        className={`flex flex-col gap-4 bg-gray-900 py-24 px-48 text-white rounded-2xl drop-area ${onDropArea ? "drop-area-active" : ""}`}
+        className={`flex flex-col gap-4 bg-white py-24 px-48 text-black rounded-2xl drop-area ${onDropArea ? "drop-area-active" : ""}`}
         onDragOver={(e) => handleDrag(e, true)}
         onDragLeave={(e) => handleDrag(e, false)}
         onDrop={handleDrop}
@@ -64,7 +64,7 @@ export default function FileDrop() {
         />
         <button
           type="button"
-          className={`bg-white text-black rounded-2xl cursor-pointer py-1 sf-button active:bg-gray-900`}
+          className={`bg-black text-white rounded-2xl cursor-pointer py-1 sf-button active:bg-white`}
           onClick={handleClick}
         >
           Select File

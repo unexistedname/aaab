@@ -1,5 +1,5 @@
 .sf-button {
-    outline: 2px solid white;
+    outline: 2px solid #101828;
     outline-offset: -1px;
     transition: all;
     transition-duration: 0.2s;
@@ -9,11 +9,11 @@
     outline-offset: 5px;
 }
 .sf-button:active {
-    color: white;
+    color: #101828;
 }
 
 .drop-area {
-    outline: 2px solid  #101828;
+    outline: 2px solid  white;
     outline-offset: -5px;
     transition: all;
     transition-duration: 0.2s;
@@ -23,7 +23,7 @@
      outline-offset: 10px;
 }
 .transition {
-    background-color:  #101828;
+    background-color:  white;
     visibility: hidden;
     border-radius: 999px;
     width: 10px;

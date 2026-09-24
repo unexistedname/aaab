@@ -1,0 +1,15 @@
+.viewport {
+    transform: translateX(-100vw);
+    transition: all 1s ease-out;
+}
+
+.viewport-loaded {
+    transform: translateX(0);
+}
+
+.editor {
+    transform: translateX(50vw);
+}
+.editor-loaded {
+    transform: translateX(0);
+}
