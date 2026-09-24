@@ -5,6 +5,7 @@ import ColorInformation from "./ColorInformation";
 import { useEffect, useState, type ReactNode } from "react";
 import NormalInformation from "./NormalInformation";
 import "./style/ImageEditor.css";
+import ImageInfo from "./components/ImageInfo";
 
 type sectionState = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 
@@ -28,7 +29,7 @@ export default function ImageEditor() {
       <div className=" bg-white w-screen h-screen grid grid-cols-5 grid-rows-1">
         <div className="bg-white col-span-4 relative flex justify-center align-middle overflow-hidden">
           <div className="absolute top-1 left-3">
-            1280px x 2160px (222222px2)
+            <ImageInfo />
           </div>
           <div className={`relative flex justify-center align-middle w-full mb-6 mt-8 bg-gray-950 rounded-r-2xl viewport ${load ? "viewport-loaded" : ""}`}>
             <div className="absolute text-white text-2xl top-1/2 z-0 font-bold">
