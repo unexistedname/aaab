@@ -6,6 +6,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import NormalInformation from "./NormalInformation";
 import "./style/ImageEditor.css";
 import ImageInfo from "./components/ImageInfo";
+import Desaturater from "./Desaturater";
 
 type sectionState = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 
@@ -58,7 +59,8 @@ export default function ImageEditor() {
             }}
           />
           <Section state={adjustment}>
-            <div>giugigg</div>
+            <div className="text-2xl font-bold">Desaturate/Grayscale</div>
+            <Desaturater />
           </Section>
         </div>
       </div>

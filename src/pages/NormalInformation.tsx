@@ -49,7 +49,6 @@ export default function NormalInformation() {
   const [valueData, setValueData] = useState<number[]>([]);
 
   useEffect(() => {
-    console.log("fwooop");
     if (!isImageReady || !imageRef.current) return;
 
     const imageContext = imageRef.current.getContext("2d");
